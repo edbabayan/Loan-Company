@@ -31,7 +31,7 @@ print("In this file we are gonna look for object columns.")
 print(df.dtypes)
 print('\n')
 
-df['term'] = df['term'].map({"36 months": 36, "60 months": 60})
+df['term'] = df['term'].map({" 36 months": 36, " 60 months": 60})
 
 print("As the saw in previous file columns grade and subgrade are also similar.")
 df.drop('grade', axis=1, inplace=True)

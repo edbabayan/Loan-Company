@@ -27,7 +27,7 @@ def fill_mort_acc(total_acc, mort_acc):
 
 df['mort_acc'] = df.apply(lambda x: fill_mort_acc(x['total_acc'], x['mort_acc']), axis=1)
 df.dropna(inplace=True)
-df['term'] = df['term'].map({"36 months": 36, "60 months": 60})
+df['term'] = df['term'].map({" 36 months": 36, " 60 months": 60})
 df.drop('grade', axis=1, inplace=True)
 dummies = pd.get_dummies(df['sub_grade'], drop_first=True)
 df = pd.concat([df.drop('sub_grade', axis=1), dummies], axis=1)
